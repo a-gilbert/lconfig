@@ -1,0 +1,6 @@
+# fnm
+FNM_PATH="/home/agilbert/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$PATH:$FNM_PATH"
+  eval "$(fnm env --shell bash)"
+fi

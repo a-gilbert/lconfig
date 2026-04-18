@@ -1,0 +1,2 @@
+# Custom addition to add doom bin to end of path options.
+export PATH="$PATH:$HOME/.config/emacs/bin"
