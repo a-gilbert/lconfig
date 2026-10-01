@@ -8,14 +8,18 @@
 
 # end
 
-include recipes/doom.makefile
-include recipes/bashrc.makefile
+include src/recipes/doom.makefile
+include src/recipes/bashrc.makefile
 
-repo2sys-copy: repo2sys-doom-copy repo2sys-bashrc-copy
-	@echo "Repo configuration copied to system."
+install: install-bashrc install-doom
+	#TODO: Throw an error if things are already in place.
+	@echo "Making clean install for Mr. Gilbert."
 
-sys2repo-copy: sys2repo-doom-copy sys2repo-bashrc-copy
-	@echo "System configuration copied to repo."
+update: update-bashrc update-doom
+	@echo "Updating custom tools and system."
+
+snapshot: snapshot-bashrc snapshot-doom
+	#TODO: add git commit mechanism
 
 test-image:
 	docker build -t lconfig-test:latest .
