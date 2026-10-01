@@ -16,3 +16,6 @@ repo2sys-copy: repo2sys-doom-copy repo2sys-bashrc-copy
 
 sys2repo-copy: sys2repo-doom-copy sys2repo-bashrc-copy
 	@echo "System configuration copied to repo."
+
+test-image:
+	docker build -t lconfig-test:latest .
